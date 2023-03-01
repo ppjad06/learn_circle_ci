@@ -61,9 +61,6 @@ workflows:
   
   test-hello-world-workflow:
     jobs:
+      - setup
       - test
-          requires:
-            - setup
       - hello_world
-          requires:
-            - setup
