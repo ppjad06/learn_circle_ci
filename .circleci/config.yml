@@ -20,7 +20,7 @@ jobs:
   test:
     # executor environment
     docker:
-      - image: cimg/base:2021.04
+      - image: 3.9-buster-node-browsers-legacy
       
     # steps
     steps:
