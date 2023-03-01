@@ -29,7 +29,7 @@ jobs:
       - checkout
       
       # working directory
-      - run: cd test
+      - run: cd learn_circle_ci/test
             
       # run tests
       - run:
@@ -48,7 +48,7 @@ jobs:
       - checkout
       
       # working directory
-      - run: cd modules
+      - run: cd learn_circle_ci/modules
             
       - run:
           name: Hello world
