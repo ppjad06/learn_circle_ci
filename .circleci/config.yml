@@ -5,19 +5,32 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
+  working_directory: /learn_circle_ci/
+  
+  setup:
+    # executor environment
+    docker: 
+      - image: 3.9.9-bullseye-node-browsers-legacy
+      
+    # steps
+    steps:
+      - run:
+          name: install dependencies
+          command: |
+            pip install -r requirements.txt
+            
   test:
     # executor environment
     docker:
       - image: 3.9.9-bullseye-node-browsers-legacy
-    
+      
     # steps
     steps:
       - checkout
-      # install dependencies
-      - run:
-          name: Install dependencies
-          command: |
-            pip install -r requirements.txt
+      
+      # working directory
+      - run: cd test
+            
       # run tests
       - run:
           name: Run test
@@ -33,11 +46,10 @@ jobs:
     # steps
     steps:
       - checkout
-      # install dependencies
-      - run:
-          name: Install dependencies
-          command: |
-            pip install -r requirements.txt
+      
+      # working directory
+      - run: cd modules
+            
       - run:
           name: Hello world
           command: |
@@ -50,4 +62,8 @@ workflows:
   test-hello-world-workflow:
     jobs:
       - test
+          requires:
+            - setup
       - hello_world
+          requires:
+            - setup
