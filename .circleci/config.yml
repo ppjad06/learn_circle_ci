@@ -20,7 +20,10 @@ jobs:
   test:
     # executor environment
     docker:
-      - image: 3.9-buster-node-browsers-legacy
+      - image: cimg/base:2021.04
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
       
     # steps
     steps:
@@ -38,6 +41,9 @@ jobs:
       # executor environment
     docker:
       - image: cimg/base:2021.04
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
 
     # steps
     steps:
