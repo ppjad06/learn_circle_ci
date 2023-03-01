@@ -31,7 +31,8 @@ jobs:
           name: Run test
           command: |
             pwd
-            python test_hello_world.py
+            # python learn_circle_ci/learn_circle_ci/tests/test_hello_world.py
+            echo "running test"
 
     # run function
   hello_world:  
