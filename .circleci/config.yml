@@ -20,10 +20,7 @@ jobs:
   test:
     # executor environment
     docker:
-      - image: cimg/base:2021.04
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: cimg/python:3.11.2
       
     # steps
     steps:
@@ -40,10 +37,7 @@ jobs:
   hello_world:  
       # executor environment
     docker:
-      - image: cimg/base:2021.04
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: cimg/python:3.11.2
 
     # steps
     steps:
