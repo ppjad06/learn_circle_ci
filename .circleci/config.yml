@@ -25,15 +25,13 @@ jobs:
     # steps
     steps:
       - checkout
-      
-      # working directory
-      - run: cd learn_circle_ci/learn_circle_ci/test
             
       # run tests
       - run:
           name: Run test
           command: |
-            echo "ran tests"
+            pwd
+            python test_hello_world.py
 
     # run function
   hello_world:  
@@ -44,14 +42,12 @@ jobs:
     # steps
     steps:
       - checkout
-      
-      # working directory
-      - run: cd learn_circle_ci/learn_circle_ci/modules
             
       - run:
           name: Hello world
           command: |
-            python resources/hello_world.py
+            pwd
+            python hello_world.py
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -60,4 +56,4 @@ workflows:
   test-hello-world-workflow:
     jobs:
       - test
-      - hello_world
+      # - hello_world
