@@ -10,7 +10,7 @@ jobs:
   setup:
     # executor environment
     docker: 
-      - image: 3.9-buster-node-browsers-legacy
+      - image: cimg/base:2021.04
       
     # steps
     steps:
@@ -22,7 +22,7 @@ jobs:
   test:
     # executor environment
     docker:
-      - image: 3.9-buster-node-browsers-legacy
+      - image: cimg/base:2021.04
       
     # steps
     steps:
