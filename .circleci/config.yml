@@ -30,7 +30,6 @@ jobs:
       - run:
           name: Run test
           command: |
-            pwd
             python ~/learn_circle_ci/learn_circle_ci/tests/test_hello_world.py
 
     # run function
@@ -46,7 +45,6 @@ jobs:
       - run:
           name: Hello world
           command: |
-            pwd
             python hello_world.py
 
 # Invoke jobs via workflows
