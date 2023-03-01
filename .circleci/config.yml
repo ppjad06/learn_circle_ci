@@ -10,7 +10,7 @@ jobs:
   setup:
     # executor environment
     docker: 
-      - image: 3.9.9-bullseye-node-browsers-legacy
+      - image: 3.9-buster-node-browsers-legacy
       
     # steps
     steps:
@@ -22,7 +22,7 @@ jobs:
   test:
     # executor environment
     docker:
-      - image: 3.9.9-bullseye-node-browsers-legacy
+      - image: 3.9-buster-node-browsers-legacy
       
     # steps
     steps:
